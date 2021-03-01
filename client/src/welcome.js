@@ -6,6 +6,7 @@ import ResetPassword from "./resetpassword";
 // import Logo from "./logo";
 import Nav from "./nav";
 import Header from "./header";
+import Style from "./style";
 
 // "dumb"/"presentational" are alternative names for function components
 export default function Welcome() {
@@ -21,6 +22,7 @@ export default function Welcome() {
                 <div>
                     <Route exact path="/" component={Registration} />
                     <Route path="/login" component={Login} />
+                    <Route path="/choosestyle" component={Style} />
                     <Route
                         path="/password/reset/start"
                         component={ResetPassword}

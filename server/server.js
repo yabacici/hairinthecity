@@ -463,6 +463,7 @@ app.get("/logout", (req, res) => {
 });
 //
 app.get("*", function (req, res) {
+    // res.sendFile(path.join(__dirname, "..", "client", "index.html"));
     if (!req.session.userId) {
         // if user not logged in redirect to welcome
         res.redirect("/welcome");

@@ -78,12 +78,11 @@ export default class Registration extends React.Component {
     render() {
         return (
             <>
-                {/* <h1>Registration</h1> */}
                 <div className="split left">
                     <div className="centered">
                         <div className="hero">
                             <h2 className="text-registration">
-                                Find a hairstylist near you
+                                Find a hairdresser who will come to you
                             </h2>
                             <div className="home container">
                                 {/* <motion.h2
@@ -96,7 +95,7 @@ export default class Registration extends React.Component {
                                     src="/afro.jpg"
                                     // onClick={toggle}
                                 ></img>
-                                <Link to="/style">
+                                <Link to="/choosestyle">
                                     <button className="motion-btn">
                                         Find your style
                                     </button>
@@ -104,7 +103,7 @@ export default class Registration extends React.Component {
 
                                 <Link to="/find-users">
                                     <button className="motion-btn">
-                                        locate a hairstylist
+                                        locate a hairdresser
                                     </button>
                                 </Link>
                             </div>

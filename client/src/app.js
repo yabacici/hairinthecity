@@ -79,9 +79,7 @@ export default class App extends Component {
         if (!this.state.id) {
             // return null;
             return (
-                // <div className="spinner-container">
-                //     <p>spinner container</p>
-                // </div>
+                // add a spinner
                 <div className="lds-hourglass"></div>
             );
         }
@@ -89,19 +87,16 @@ export default class App extends Component {
         return (
             <BrowserRouter>
                 <div className="app">
-                    {/* <Link to="/find-users">
-                        <button>Find people</button>
-                    </Link> */}
-                    {/* <Nav
+                    <Nav
                         firstName={this.state.firstName}
                         lastName={this.state.lastName}
                         profilePicUrl={this.state.profilePicUrl}
                         uploaderVisible={this.state.uploaderVisible}
                         toggleUploader={this.toggleUploader}
                         size="small"
-                    /> */}
+                    />
 
-                    <h1>Adding React Google Map</h1>
+                    {/* <h1>Adding React Google Map</h1> */}
                     {this.state.uploaderVisible && (
                         <Uploader
                             // firstName={this.state.firstName}
@@ -110,7 +105,6 @@ export default class App extends Component {
                             setProfilePicUrl={this.setProfilePicUrl}
                         />
                     )}
-                    {/* <Music /> */}
 
                     <Route
                         exact
