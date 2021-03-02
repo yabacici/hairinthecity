@@ -7,6 +7,7 @@ import ResetPassword from "./resetpassword";
 import Nav from "./nav";
 import Header from "./header";
 import Style from "./style";
+import StyleSelected from "./style-selected";
 
 // "dumb"/"presentational" are alternative names for function components
 export default function Welcome() {
@@ -23,6 +24,16 @@ export default function Welcome() {
                     <Route exact path="/" component={Registration} />
                     <Route path="/login" component={Login} />
                     <Route path="/choosestyle" component={Style} />
+                    <Route
+                        path="/style/:selected"
+                        render={(props) => (
+                            <StyleSelected
+                                key={props.match.url}
+                                match={props.match}
+                                history={props.history}
+                            />
+                        )}
+                    />
                     <Route
                         path="/password/reset/start"
                         component={ResetPassword}

@@ -6,9 +6,20 @@ export default function Nav(props) {
     console.log("props: ", props);
     return (
         <nav>
-            <Logo />
+            {/* <Logo />
             <div className="logo">
                 <h4>Hair in the city</h4>
+            </div> */}
+
+            <div className="logo">
+                <img
+                    className="icon"
+                    src="/afro.jpg"
+                    // onClick={toggle}
+                ></img>
+            </div>
+            <div className="title">
+                <h1>Hair In The City</h1>
             </div>
             <ul className="nav-links">
                 <li>

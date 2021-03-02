@@ -12,6 +12,7 @@ import Nav from "./nav";
 import Chat from "./chat";
 import Music from "./music";
 import Style from "./style";
+import Header from "./header";
 // import { Link } from "react-router-dom";
 
 export default class App extends Component {

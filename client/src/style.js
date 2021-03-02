@@ -1,33 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Style = ({ addStyle, hair }) => {
     const styles = [
         "Twists",
         "Box Braids",
-        "Pixy cut",
-        "Flat twist",
+        "Flat Twists",
         "Cornrows",
+        "Crochet Braids",
+        "Weave",
     ];
     console.log("sanity");
     return (
         <div className="style container">
-            <h3>Step 1: Choose Your Style</h3>
+            <h3>Choose Your Style</h3>
             <ul>
                 {styles.map((style) => {
                     // let spanClass = hair.style === style ? "active" : "";
-                    let spanClass = "";
+                    // let spanClass = "";
                     return (
-                        <li key={style} onClick={() => addStyle(style)}>
-                            <span className={spanClass}>{style}</span>
+                        <li key={style}>
+                            {/* <span className={spanClass}>{style}</span> */}
+                            <Link to={`/Style/${style}`}>{style}</Link>
                         </li>
                     );
                 })}
             </ul>
-
+            <Link to="/">
+                <button className="homepage-btn">homepage</button>
+            </Link>
+            {/* when user chooses a style the Next button should appear */}
             {/* {hair.style && (
                 <div className="next">
-                    <Link to="/">
+                    <Link to="/find-users">
                         <button>Next</button>
                     </Link>
                 </div>

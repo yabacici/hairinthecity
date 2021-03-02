@@ -82,7 +82,7 @@ export default class Registration extends React.Component {
                     <div className="centered">
                         <div className="hero">
                             <h2 className="text-registration">
-                                Find a hairdresser who will come to you
+                                Find a hair stylist who will come to you
                             </h2>
                             <div className="home container">
                                 {/* <motion.h2
@@ -101,9 +101,9 @@ export default class Registration extends React.Component {
                                     </button>
                                 </Link>
 
-                                <Link to="/find-users">
+                                <Link to="/mycomponent">
                                     <button className="motion-btn">
-                                        locate a hairdresser
+                                        who is near you?
                                     </button>
                                 </Link>
                             </div>
