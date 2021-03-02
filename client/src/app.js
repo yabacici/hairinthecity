@@ -13,6 +13,7 @@ import Chat from "./chat";
 import Music from "./music";
 import Style from "./style";
 import Header from "./header";
+import Maps from "./maps";
 // import { Link } from "react-router-dom";
 
 export default class App extends Component {
@@ -149,6 +150,7 @@ export default class App extends Component {
                         path="/show-friends-wannabes"
                         render={() => <Friends />}
                     />
+                    <Route path="/maps" render={() => <Maps />} />
                     <Route path="/chat" component={Chat} />
                 </div>{" "}
             </BrowserRouter>

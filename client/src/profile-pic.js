@@ -12,17 +12,19 @@ export default function ProfilePic({
     size = "",
 }) {
     return (
-        <div className="profile-pic">
-            <img
-                className={`${size} avatar`}
-                onClick={toggleUploader}
-                src={profilePicUrl || "default.jpg"}
-                alt={`${firstName} ${lastName}`}
-            />
+        <div className="profile-pic-container">
+            <div className="profile-pic">
+                <img
+                    className={`${size} avatar`}
+                    onClick={toggleUploader}
+                    src={profilePicUrl || "default.jpg"}
+                    alt={`${firstName} ${lastName}`}
+                />
 
-            <div className="profile-name">
-                {/* <label>{firstName + " " + lastName}</label> */}
-                <p>{`${firstName} ${lastName}`}</p>
+                <div className="profile-name">
+                    {/* <label>{firstName + " " + lastName}</label> */}
+                    <p>{`${firstName} ${lastName}`}</p>
+                </div>
             </div>
         </div>
     );

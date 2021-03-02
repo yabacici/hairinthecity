@@ -32,11 +32,14 @@ export default function StyleSelected(props) {
         // img.onload = () => setLoaded(true);
     }, []);
     return (
-        <div className="selected-style">
-            {/* {image && <h2>should display{image}</h2>} */}
-            {image && <img className="selected-pic" src={image} />}
-            <h1>Hey, i am the selected style</h1>
-            <a href="/welcome#/choosestyle">go back</a>
+        <div className="style container">
+            <h3>What do you this of this style?</h3>
+            <div className="selected-style">
+                {/* {image && <h2>should display{image}</h2>} */}
+                {image && <img className="selected-pic" src={image} />}
+                <h1>Keep looking</h1>
+                <a href="/welcome#/choosestyle">go back</a>
+            </div>
         </div>
     );
 }
