@@ -84,7 +84,7 @@ function Maps() {
         <GoogleMap
             mapContainerStyle={containerStyle}
             center={userLocation}
-            zoom={13}
+            zoom={15}
             onLoad={onMapLoad}
             onClick={(e) => addMarker(e)}
             onUnmount={onUnmount}

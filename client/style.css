@@ -22,7 +22,9 @@ body {
     letter-spacing: 2px;
     list-style-type: none;
     text-decoration: none;
-    height: 100vh;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    /* max-width: 1200px; */
+    /* max-height: 100vh; */
 }
 /* RESGISTRATION BLACK SIDE */
 /* header */
@@ -103,11 +105,20 @@ li span.active::before {
     font-size: 2em;
     margin-bottom: 30px;
 } */
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    /* margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px; */
+}
 
 .style.container {
     text-align: center;
 
-    /* max-width: 800px; */
+    /* max-width: 300px; */
 }
 .style.container a {
     text-decoration: none;
@@ -115,6 +126,7 @@ li span.active::before {
 }
 
 .style.container li {
+    list-style-type: none;
     font-weight: bolder;
     text-align: center;
     text-decoration: none;
@@ -146,8 +158,8 @@ li span.active::before {
 }
 
 .input-group {
-    top: 200px;
-    position: absolute;
+    /* top: 200px;
+    position: absolute; */
     width: 200px;
     transition: 0.5s;
     color: black;
@@ -160,6 +172,7 @@ li span.active::before {
     color: black;
 }
 .input-field {
+    /* margin-top: 10px; */
     width: 100%;
     padding: 10px 0;
     margin: 5px 0;
@@ -206,11 +219,15 @@ li span.active::before {
 }
 
 .form-box {
-    width: 380px;
-    height: 480px;
+    height: 78vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* width: 45vh; */
     /* max-width: 280px; */
     position: relative;
-    margin: 6% auto;
+    /* margin: 6% auto; */
     /* background: #fff; */
     padding: 5px;
     border-radius: 5%;
@@ -393,6 +410,12 @@ textarea i {
     /* text-style: italic; */
     text-align: right;
 }
+.cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+}
 
 /* user profile */
 .card {
@@ -406,10 +429,11 @@ textarea i {
     text-align: center;
     color: black;
     font-family: "Roboto", sans-serif;
-    max-width: 400px;
-    margin-top: 100px;
-    box-shadow: 5px 10px 25px black;
-    background: white;
+    width: 300px;
+    height: 300px;
+    /* margin-top: 50px; */
+    box-shadow: 10px 20px 50px black;
+    background: rgb(173, 154, 170);
 
     /* margin-right: 50%; */
     /* border: 3px solid black; */
@@ -419,10 +443,35 @@ textarea i {
     /* max-height: 300px; */
 }
 
-/* .profile-pic {
-    border: 2px solid #e7e7e7;
+.card p {
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    /* border-bottom: 1px solid black; */
+}
+
+.gallery-pic {
+    /* border: 2px solid black; */
     border-radius: 4px;
     padding: 0.5rem;
+}
+
+.img-gallery {
+    /* position: absolute; */
+    /* border: 2px solid black; */
+    height: 40vh;
+    width: 40vh;
+    /* border-radius: 4px; */
+    /* padding: 0.5rem; */
+}
+
+/* .gallery {
+    width: 0%;
+    height: 200px;
+    background: blue;
+    color: white;
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 } */
 
 /* .card:hover {
@@ -460,10 +509,11 @@ textarea i {
     background: transparent;
     border-radius: 50px;
     border: 1px solid black;
-    margin: 40px auto 0;
+    /* margin: 40px auto 0; */
     cursor: pointer;
     /* opacity: 0.7; */
-    margin-bottom: 5px;
+    margin-top: 120px;
+    font-family: "Yanone Kaffeesatz", sans-serif;
 }
 
 .save-btn:hover,
@@ -509,9 +559,14 @@ h1 {
     color: white;
 }
 
+.bio-container {
+    text-align: center;
+}
+
 .bio-text {
     color: black;
-    border-top: 1px solid black;
+    /* margin-bottom: 100px; */
+    /* border-top: 1px solid black; */
 }
 
 .show-all {
@@ -566,6 +621,11 @@ h1 {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+/* @media (max-height: 900px) {
+    .form-box {
+
+    }
+} */
 
 .searchppl-container {
     display: grid;
@@ -917,4 +977,18 @@ h1 {
     cursor: pointer;
     opacity: 0.7;
     align-items: center;
+}
+
+.card a {
+    color: black;
+    padding: 10px 30px;
+    font-size: 1em;
+    background: transparent;
+    border-radius: 50px;
+    border: 1px solid black;
+    margin: 40px auto 0;
+    cursor: pointer;
+    /* opacity: 0.7; */
+    margin-bottom: 5px;
+    text-decoration: none;
 }

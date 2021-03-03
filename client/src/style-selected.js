@@ -17,12 +17,30 @@ export default function StyleSelected(props) {
     ];
 
     const descriptions = [
-        { twists: "takes 3 hours" },
-        { "box braids": "takes 2 hours" },
-        { "flat twists": "takes 6 hours" },
-        { cornrows: "takes 1 hours" },
-        { "crochet braids": "takes 2 hours" },
-        { weave: "2.30 hours" },
+        {
+            twists:
+                "The style is achieved by dividing the hair into several sections, then twisting two twisted strands around one another. It takes up 4 hours depending on hair length.",
+        },
+        {
+            "box braids":
+                "This type of hairstyle consists of square-shaped hair divisions. It takes up to 5 hours depending on hair length.",
+        },
+        {
+            "flat twists":
+                "Flat twists are comprised of two twists that are done on the scalp. It takes up to 3 hours depending on hair length.",
+        },
+        {
+            cornrows:
+                "This style of hair braiding in which the hair is braided very close to the scalp, using an underhand, upward motion to make a continuous, raised row. It takes up to 3 hours depending on hair length.",
+        },
+        {
+            "crochet braids":
+                "Crochet braids are techniques for braiding hair that involve crocheting synthetic hair extensions to a person's natural hair with a latch hook or crochet hook. It takes up to 2 hours depending on hair length.",
+        },
+        {
+            weave:
+                "Weaves add length and fullness to human hair. They are glued or sewn on natural hair by incorporating additional human or synthetic hair.It takes up to 3 hours depending on hair length.",
+        },
     ];
     const [image, setImage] = useState("");
     const [text, setText] = useState("");
@@ -59,7 +77,7 @@ export default function StyleSelected(props) {
     }, []);
     return (
         <div className="style container">
-            <h3>What do you this of this style?</h3>
+            <h3>What do you think of this style?</h3>
             <div className="selected-style">
                 {/* {image && <h2>should display{image}</h2>} */}
                 {image && <img className="selected-pic" src={image} />}

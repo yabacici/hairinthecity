@@ -3,7 +3,7 @@
 // (class components also have lifecycle methods (like componentDidMount))
 import React from "react";
 import axios from "./axios";
-import Base from "./style";
+import Style from "./style";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
