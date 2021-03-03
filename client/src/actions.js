@@ -86,3 +86,34 @@ export function deleteMsg(messageId) {
         messageId: messageId,
     };
 }
+// HAIR IN THE CITY PROJECT////
+export async function showAllHairStylists() {
+    const { data } = await axios.get("/api/all-hairstylists");
+    // console.log("data.rows: ", data.rows);
+
+    return {
+        type: "SHOW_ALL_HAIRSTYLISTS",
+        allHairSylists: data.rows,
+    };
+}
+
+export async function addHairStylist(newHairStylist) {
+    try {
+        return {
+            type: "NEW_BAR",
+            newHairStylist,
+        };
+    } catch (err) {
+        console.log("err adding stylist: ", err);
+    }
+}
+
+export async function lastHairStylist() {
+    const { data } = await axios.get("/api-last-hairstylist");
+    // console.log("data.rows in axios all venues: ", data.rows);
+    // console.log("data in axios all venues: ", data);
+    return {
+        type: "LAST_HAIRSTYLIST",
+        lastHairStylist: data.rows,
+    };
+}

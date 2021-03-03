@@ -3,7 +3,7 @@ users;
 DROP TABLE IF EXISTS 
 friendships;
 DROP TABLE IF EXISTS message ;
-
+ DROP TABLE IF EXISTS hairstylists;
 
 
 CREATE TABLE users(
@@ -38,3 +38,17 @@ CREATE TABLE message(
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
 
+
+
+-- FOR HAIR IN THE CITY PROJECT
+ CREATE TABLE hairstylists(
+      id SERIAL PRIMARY KEY,
+      user_id INT REFERENCES users(id) NOT NULL,
+      name VARCHAR(255) NOT NULL,
+      description VARCHAR DEFAULT NULL,
+      lat VARCHAR NOT NULL,
+      lng VARCHAR NOT NULL,
+      img_stylist VARCHAR DEFAULT NULL,
+     
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );

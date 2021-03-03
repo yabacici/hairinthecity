@@ -216,33 +216,6 @@ app.post("/profile-pic", uploader.single("file"), s3.upload, (req, res) => {
         res.json({ success: false });
     }
 });
-// route for final project :HAIR IN THE CITY
-// app.post("/gallery", uploader.single("file"), s3.upload, (req, res) => {
-//     console.log(
-//         "I'm the post route user/profile-pic for hair in the city project"
-//     );
-//     const { filename } = req.file;
-//     let url = "https://cecile-imageboard.s3.amazonaws.com/" + req.file.filename; // create socialnet imgs
-//     console.log("req.session.userId: ", req.session.userId);
-
-//     if (filename) {
-//         db.uploadPic(req.session.userId, url)
-//             .then((results) => {
-//                 console.log(results.rows);
-//                 res.json({
-//                     rows: results.rows[0].profile_pic_url,
-//                     success: true,
-//                 });
-//             })
-//             .catch((err) => {
-//                 console.log("Error uploading profile pic: ", err);
-//                 res.json({ success: false });
-//             });
-//     } else {
-//         console.log("no file or too large ");
-//         res.json({ success: false });
-//     }
-// });
 
 app.post("/delete-profile-pic", async (req, res) => {
     try {
@@ -481,6 +454,68 @@ app.get("/friends-wannabes", async (req, res) => {
     //     res.json({ success: false });
     // });
 });
+
+// ///// ROUTE FOR HAIR IN THE CITY////
+app.post("/create-hairstylist", (req, res) => {
+    const { hairStylistName, description, lat, lng } = req.body;
+    // console.log("latLng: ", latLng[0]);
+    // const latLngDB = [latLng.lat, latLng.lng];
+    // const latLng = [lat, lng];
+    db.addStylistNoPic(
+        req.session.userId,
+        hairStylistName,
+        description,
+        lat,
+        lng
+    )
+        .then(({ rows }) => {
+            console.log("stylist without pic was added to DB");
+            res.json({ success: true, rows: rows });
+        })
+        .catch((err) => {
+            console.log(
+                "there was an error in adding a stylist without pic: ",
+                err
+            );
+        });
+});
+
+app.post(
+    "/create-hairstylist-pic",
+    uploader.single("file"),
+    s3.upload,
+    (req, res) => {
+        const { filename } = req.file;
+        let url =
+            "https://cecile-imageboard.s3.amazonaws.com/" + req.file.filename;
+        console.log("req.session.userId: ", req.session.userId);
+        const { hairStylistName, description, lat, lng } = req.body;
+        // console.log("latLng: ", latLng[0]);
+        // const latLngDB = [latLng.lat, latLng.lng];
+        // const latLng = [lat, lng];
+        if (filename) {
+            db.addHairStylist(
+                req.session.userId,
+                hairStylistName,
+                description,
+                url,
+                lat,
+                lng
+            )
+                .then(({ rows }) => {
+                    console.log("bar was added to DB with pic");
+                    res.json({ success: true, rows: rows });
+                })
+                .catch((err) => {
+                    console.log(
+                        "there was an error in adding a bar wtih pic: ",
+                        err
+                    );
+                });
+        }
+    }
+);
+// ///// END ROUTE FOR HAIR IN THE CITY////
 
 // use ancher tag href= logout
 app.get("/logout", (req, res) => {
