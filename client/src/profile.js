@@ -24,7 +24,8 @@ export default function Profile(props) {
                     {/* <span className="blinking">Am I blinking?</span> */}
                     <span className="blinking">
                         {" "}
-                        Welcome {props.firstName} {props.lastName} !
+                        {/* Welcome {props.firstName} {props.lastName} ! */}
+                        Welcome {props.firstName} !
                     </span>
                 </h2>
 
@@ -38,6 +39,7 @@ export default function Profile(props) {
                 {/* <button onClick={() => props.toggleUploader()}>
                 New profile picture
             </button> */}
+                <a href="mailto:c.eboa@outlook.com to mail to">Email me</a>
             </div>
         </>
     );

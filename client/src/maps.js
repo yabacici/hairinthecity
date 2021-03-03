@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 const containerStyle = {
     width: "500px",
-    height: "500px",
-    left: "500px",
+    height: "350px",
+    left: "375px",
 };
 
 const center = {
@@ -109,7 +109,10 @@ function Maps() {
             </>
         </GoogleMap>
     ) : (
-        <></>
+        <>
+            {" "}
+            <a href="/welcome#/choosestyle">back</a>
+        </>
     );
 }
 

@@ -7,6 +7,7 @@ import ResetPassword from "./resetpassword";
 import Nav from "./nav";
 import Header from "./header";
 import Style from "./style";
+import Maps from "./maps";
 import StyleSelected from "./style-selected";
 
 // "dumb"/"presentational" are alternative names for function components
@@ -24,6 +25,7 @@ export default function Welcome() {
                     <Route exact path="/" component={Registration} />
                     <Route path="/login" component={Login} />
                     <Route path="/choosestyle" component={Style} />
+                    <Route path="/maps" component={Maps} />
                     <Route
                         path="/style/:selected"
                         render={(props) => (

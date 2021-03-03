@@ -11,6 +11,7 @@ const Style = ({ addStyle, hair }) => {
         "Crochet Braids",
         "Weave",
     ];
+
     console.log("sanity");
     return (
         <div className="style container">
@@ -28,7 +29,7 @@ const Style = ({ addStyle, hair }) => {
                 })}
             </ul>
             <Link to="/">
-                <button className="homepage-btn">homepage</button>
+                <button className="homepage-btn">HOMEPAGE</button>
             </Link>
             {/* when user chooses a style the Next button should appear */}
             {/* {hair.style && (

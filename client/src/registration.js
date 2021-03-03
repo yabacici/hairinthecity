@@ -101,7 +101,7 @@ export default class Registration extends React.Component {
                                     </button>
                                 </Link>
 
-                                <Link to="/mycomponent">
+                                <Link to="/maps">
                                     <button className="motion-btn">
                                         who is near you?
                                     </button>
