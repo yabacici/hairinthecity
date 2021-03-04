@@ -100,7 +100,7 @@ export async function getHairStylist() {
 export async function addHairStylist(newHairStylist) {
     try {
         return {
-            type: "NEW_BAR",
+            type: "NEW_HAIRSTYLIST",
             newHairStylist,
         };
     } catch (err) {
@@ -117,3 +117,4 @@ export async function lastHairStylist() {
         lastHairStylist: data.rows,
     };
 }
+// END HAIR IN THE CITY PROJECT////
