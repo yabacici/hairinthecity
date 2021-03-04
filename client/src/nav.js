@@ -23,13 +23,13 @@ export default function Nav(props) {
             </div>
             <ul className="nav-links">
                 <li>
-                    <a href="/find-users">Find People</a>
+                    <a href="/find-users">Find HairStylists</a>
                 </li>
                 <li>
                     <a href="/chat">Chat</a>
                 </li>
                 <li>
-                    <a href="/friends">Friends</a>
+                    <a href="https://www.naturalhairrules.com/">Blog</a>
                 </li>
             </ul>
 

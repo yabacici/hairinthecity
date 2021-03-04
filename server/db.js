@@ -163,6 +163,10 @@ module.exports.deleteChatMessage = (messageId) => {
 };
 
 ////// THIS SIDE IS FOR HAIR IN THE CITY PROJECT//////////
+module.exports.getHairStylist = () => {
+    const q = `SELECT * FROM hairstylists ORDER BY id DESC`;
+    return db.query(q);
+};
 module.exports.addHairStylist = (
     userId,
     name,
@@ -171,14 +175,14 @@ module.exports.addHairStylist = (
     lat,
     lng
 ) => {
-    const q = `INSERT INTO bars (user_id, name, description, img_stylist, lat, lng)
+    const q = `INSERT INTO hairstylists (user_id, name, description, img_stylist, lat, lng)
     VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;
     const params = [userId, name, description, imgStylist, lat, lng];
     return db.query(q, params);
 };
-module.exports.addStylistNoPic = (userId, name, description, lat, lng) => {
-    const q = `INSERT INTO bars (user_id, name, description, lat, lng)
-    VALUES ($1, $2, $3, $4, $5) RETURNING *`;
-    const params = [userId, name, description, lat, lng];
-    return db.query(q, params);
-};
+// module.exports.addStylistNoPic = (userId, name, description, lat, lng) => {
+//     const q = `INSERT INTO hairstylists (user_id, name, description, lat, lng)
+//     VALUES ($1, $2, $3, $4, $5) RETURNING *`;
+//     const params = [userId, name, description, lat, lng];
+//     return db.query(q, params);
+// };

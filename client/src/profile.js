@@ -36,7 +36,7 @@ export default function Profile(props) {
 
                 {/* <Music /> */}
                 <div className="card">
-                    <p>Drop a line</p>
+                    <h2>Drop a line</h2>
                     <BioEditor
                         firstName={props.firstName}
                         lastName={props.lastName}
@@ -44,7 +44,7 @@ export default function Profile(props) {
                     />
                 </div>
                 <div className="card">
-                    <p>Show your work</p>
+                    <h2>Show your work</h2>
                     {/* <Gallery profilePicUrl={props.profilePicUrl} /> */}
                     <Carousel>
                         <Gallery galleryImage="hairwork/corn.jpg" />

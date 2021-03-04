@@ -456,27 +456,16 @@ app.get("/friends-wannabes", async (req, res) => {
 });
 
 // ///// ROUTE FOR HAIR IN THE CITY////
-app.post("/create-hairstylist", (req, res) => {
-    const { hairStylistName, description, lat, lng } = req.body;
-    // console.log("latLng: ", latLng[0]);
-    // const latLngDB = [latLng.lat, latLng.lng];
-    // const latLng = [lat, lng];
-    db.addStylistNoPic(
-        req.session.userId,
-        hairStylistName,
-        description,
-        lat,
-        lng
-    )
+
+app.get("/api/all-hairstylists", (req, res) => {
+    // console.log("I am the all bar get route");
+    db.getHairStylist()
         .then(({ rows }) => {
-            console.log("stylist without pic was added to DB");
-            res.json({ success: true, rows: rows });
+            // console.log("rows: ", rows);
+            res.json({ rows });
         })
         .catch((err) => {
-            console.log(
-                "there was an error in adding a stylist without pic: ",
-                err
-            );
+            console.log("err in show all bars: ", err);
         });
 });
 
@@ -515,6 +504,30 @@ app.post(
         }
     }
 );
+app.post("/create-hairstylist", (req, res) => {
+    const { hairStylistName, description, lat, lng } = req.body;
+    // console.log("latLng: ", latLng[0]);
+    // const latLngDB = [latLng.lat, latLng.lng];
+    // const latLng = [lat, lng];
+    db.addStylistNoPic(
+        req.session.userId,
+        hairStylistName,
+        description,
+        lat,
+        lng
+    )
+        .then(({ rows }) => {
+            console.log("stylist without pic was added to DB");
+            res.json({ success: true, rows: rows });
+        })
+        .catch((err) => {
+            console.log(
+                "there was an error in adding a stylist without pic: ",
+                err
+            );
+        });
+});
+
 // ///// END ROUTE FOR HAIR IN THE CITY////
 
 // use ancher tag href= logout

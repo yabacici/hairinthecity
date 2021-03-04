@@ -87,7 +87,7 @@ export function deleteMsg(messageId) {
     };
 }
 // HAIR IN THE CITY PROJECT////
-export async function showAllHairStylists() {
+export async function getHairStylist() {
     const { data } = await axios.get("/api/all-hairstylists");
     // console.log("data.rows: ", data.rows);
 

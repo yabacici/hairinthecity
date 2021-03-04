@@ -1,15 +1,12 @@
 import React, { Component } from "react";
+// import { useState, useEffect } from "react";
 
-// const Gallery = ({ number }) => <div className="gallery">{number}</div>;
 const Gallery = ({ galleryImage }) => (
     <div className="Gallery">
         <img src={galleryImage} alt="galleryImage" />
     </div>
 );
 export default Gallery;
-
-// { id: 1, corn: "hairwork/corn.jpg" },
-// { id: 2, bun: "hairwork/bun.jpg" },
 
 // export default function Gallery({
 //     firstName,
@@ -31,25 +28,4 @@ export default Gallery;
 //             </div>
 //         </div>
 //     );
-// }
-
-// import React, { Component } from "react";
-// import Carousel from "react-elastic-carousel";
-
-// export default function Gallery() {
-//     state = {
-//         pics: [{ corn: "hairwork/corn.jpg" }, { bun: "hairwork/bun.jpg" }],
-//     };
-
-//     render();
-//     {
-//         const { pics } = this.state;
-//         return (
-//             <Carousel>
-//                 {pics.map((pic) => (
-//                     <div key={pic.id}>{pic.title}</div>
-//                 ))}
-//             </Carousel>
-//         );
-//     }
 // }
