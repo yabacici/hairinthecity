@@ -1,7 +1,10 @@
 import React from "react";
+import axios from "./axios";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Hairstylists from "./hairstylists";
+import { getHairStylist } from "./actions";
 
 const containerStyle = {
     width: "500px",
@@ -15,6 +18,14 @@ const center = {
 };
 
 function Maps() {
+    const [hairStylists, setHairStylists] = useState([]);
+    // const dispatch = useDispatch();
+
+    // const hairstylists = useSelector(
+    //     (state) =>
+    //         state.allHairstylists &&
+    //         state.allHairstylists.filter((hairStylist) => hairStylist.id)
+    // );
     const addMarker = (e) => {
         setpinHairStylistLoc({ lat: e.latLng.lat(), lng: e.latLng.lng() });
     };
@@ -24,8 +35,8 @@ function Maps() {
     const [pinHairStylistLoc, setpinHairStylistLoc] = useState([]);
     // lat and lag from user
     const userLocation = {
-        lat: latUser,
-        lng: lngUser,
+        lat: 52.52,
+        lng: 13.405,
     };
     const mapRef = useRef();
     const onMapLoad = useCallback((map) => {
@@ -61,6 +72,15 @@ function Maps() {
             alert("The browser doesn't support Geolocation");
         }
     }, [latUser]);
+
+    // check this useEffect
+    useEffect(() => {
+        axios.get("/api/all-hairstylists").then(({ data }) => {
+            console.log(data);
+            setHairStylists(data.rows);
+        });
+    }, []);
+
     const { isLoaded } = useJsApiLoader({
         id: "google-map-script",
         googleMapsApiKey: apiKey,
@@ -106,14 +126,35 @@ function Maps() {
                         anchor: new window.google.maps.Point(15, 15),
                     }}
                 />
+                {hairStylists.map((hairStylist) => {
+                    return (
+                        <Marker
+                            key={hairStylist.name}
+                            label={hairStylist.description}
+                            position={{
+                                lat: parseFloat(hairStylist.lat),
+                                lng: parseFloat(hairStylist.lng),
+                            }}
+                        />
+                    );
+                })}
+                {/* {hairStylistPopUpVisible && (
+                    <HairStylists
+                        toggleHairStylist={toggleHairStylist}
+                        setPinBarLocation={setPinHairStylistLoc}
+                        pinHairStylistLoc={pinHairStylistLoc}
+                        updateHairStylistLoc={props.updateHairStylistLoc}
+                    />
+                )} */}
             </>
         </GoogleMap>
     ) : (
-        <>
-            {" "}
-            <a href="/welcome#/choosestyle">back</a>
-        </>
+        <></>
     );
 }
 
 export default React.memo(Maps);
+
+{
+    /* <a href="/welcome#/choosestyle">back</a>; */
+}

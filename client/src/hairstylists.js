@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addHairStylist, lastHairStylist } from "./actions";
 
-export default function CreateHairStylist(props) {
+export default function HairStylist(props) {
     const dispatch = useDispatch();
 
     const [hairStylistName, setHairStylistName] = useState("");
@@ -38,9 +38,7 @@ export default function CreateHairStylist(props) {
                     dispatch(addHairStylist(response.data.rows[0]));
                     dispatch(lastHairStylist(response.data.rows[0]));
                     setError(false);
-                    props.toggleCreateHairStylist(
-                        !props.hairStylistPopUpVisible
-                    );
+                    props.toggleHairStylist(!props.hairStylistPopUpVisible);
                 })
                 .catch((err) => {
                     console.log("err in axios post profile pic: ", err);
@@ -62,9 +60,7 @@ export default function CreateHairStylist(props) {
                     dispatch(addHairStylist(response.data.rows[0]));
                     dispatch(lastHairStylist(response.data.rows[0]));
                     setError(false);
-                    props.toggleCreateHairStylist(
-                        !props.hairStylistPopUpVisible
-                    );
+                    props.toggleHairStylist(!props.hairStylistPopUpVisible);
                 })
                 .catch((err) => {
                     console.log("err in axios post profile pic: ", err);
@@ -80,7 +76,7 @@ export default function CreateHairStylist(props) {
                     <img
                         className="close-icon"
                         src="/x-mark.png"
-                        onClick={props.toggleCreateHairStylist}
+                        onClick={props.toggleHairStylist}
                     />
                     <h2>Add Hairstylist</h2>
                     <input
