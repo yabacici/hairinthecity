@@ -27,6 +27,8 @@ function Maps() {
     //         state.allHairstylists.filter((hairStylist) => hairStylist.id)
     // );
     const addMarker = (e) => {
+        console.log("in addMarker:", e);
+        console.log(" still in addMaker:", e.latLng.lat());
         setpinHairStylistLoc({ lat: e.latLng.lat(), lng: e.latLng.lng() });
     };
     // for user location
@@ -45,6 +47,7 @@ function Maps() {
 
     let watchId;
     useEffect(() => {
+        console.log(" hairstylist loc:", pinHairStylistLoc);
         console.log("userLocation: ", userLocation);
         if (navigator.geolocation) {
             watchId = navigator.geolocation.watchPosition(
@@ -76,7 +79,7 @@ function Maps() {
     // check this useEffect
     useEffect(() => {
         axios.get("/api/all-hairstylists").then(({ data }) => {
-            console.log(data);
+            console.log("response from all hairstylist:", data);
             setHairStylists(data.rows);
         });
     }, []);
@@ -112,11 +115,12 @@ function Maps() {
             {/* Child components, such as markers, info windows, etc. */}
             <>
                 {" "}
+                <h2>{pinHairStylistLoc.lat}</h2>
                 <Marker
                     onLoad={loadMarker}
                     position={{
-                        lat: parseFloat(pinHairStylistLoc.lat),
-                        lng: parseFloat(pinHairStylistLoc.lng),
+                        lat: parseFloat(52.52276194553862),
+                        lng: parseFloat(13.402294006254445),
                     }}
                     icon={{
                         // icon personalized
