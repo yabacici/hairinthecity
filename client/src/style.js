@@ -1,6 +1,6 @@
 import React from "react";
+import StyleSelected from "./style-selected.js";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const Style = ({ addStyle, hair }) => {
     const styles = [
@@ -12,11 +12,18 @@ const Style = ({ addStyle, hair }) => {
         "Weave",
     ];
 
-    console.log("sanity");
+    // console.log("sanity");
     return (
         <div className="style container">
             <h3>Choose Your Style</h3>
+
             <ul>
+                <input
+                    // className="input-field"
+                    // onChange={(e) => this.handleChange(e)}
+                    type="text"
+                    placeholder="search"
+                />
                 {styles.map((style) => {
                     // let spanClass = hair.style === style ? "active" : "";
                     // let spanClass = "";

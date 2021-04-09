@@ -1,20 +1,29 @@
-# 'Hair In The City' Project
+# Hair In The City App
 
 I created 'Hair In The City' is my final project during a 3-month bootcamp at SPICED Academy.
 
+This project is a **work in progress**.
+
 ## Overview
 
-This project is a WORK IN PROGRESS.
+This is a fullstack React app.
 
-This is a single-page application made with React where users can EITHER look for a hairstylist nearby without creating a profile OR register as a hairdresser and engage in conversation with other users.
+### My idea
+
+This is an app where users can look for a hairstylist nearby without creating a profile or register as a hairdresser and engage in conversation with other users.
+
+### What can a user do?
+
+-   Register
+-   Log in
+-   Chat
+-   Look for other users
+-   Locate user
 
 ## Built with
 
--   HTML
 -   CSS
--   JavaScript
--   Node.js
--   React.js
+-   React
 -   Redux
 -   React Google API
 -   Socket.io
@@ -23,11 +32,10 @@ This is a single-page application made with React where users can EITHER look fo
 
 ## Getting Started
 
-### Prerequisites
+```Console
+npm install
+```
 
-A repo for this project has already been created by SPICED Academy instructors.
+## Screenshots
 
--   npm
-    > npm install
-
-## Usage
+**coming soon**

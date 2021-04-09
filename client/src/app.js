@@ -10,7 +10,6 @@ import { BrowserRouter, Route } from "react-router-dom";
 import FindPeople from "./findPeople";
 import Nav from "./nav";
 import Chat from "./chat";
-import Music from "./music";
 import Style from "./style";
 import Header from "./header";
 import Maps from "./maps";
