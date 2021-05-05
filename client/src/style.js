@@ -17,6 +17,7 @@ const Style = ({ addStyle, hair }) => {
         <div className="style container">
             <h3>Choose Your Style</h3>
 
+            {/* adding search bar */}
             <ul>
                 <input
                     // className="input-field"
